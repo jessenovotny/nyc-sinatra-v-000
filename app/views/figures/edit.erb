@@ -1,19 +1,13 @@
-NEW LANDMARK FORM
+EDIT FIGURE FORM
 
 
-<form action="/landmarks/new" method="post">
+<form action="/figures/<%= @figure.id %>" method="post">
 
-  Landmark Name:
-  <input type="text" name="landmark[name]" id="landmark_name">    
+  Current Name: <%= @figure.name %>
+  Edit Figure Name:
+  <input type="text" name="figure[name]" id="figure_name">    
 
-  Year Completed
-  <input type="text" name="landmark[year_completed]" id="landmark_year_completed">
-
-  <input type="submit" name="submit" id="Create New Landmark">Create New Landmark</input>
-</form>
-
-
-<!--   Select From Existing Landmarks:
+  Select From Existing Landmarks:
   <% Landmark.all.each do |landmark| %>
     <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="landmark_<%= landmark.id %>"><%= landmark.name %></input>
   <% end %>
@@ -28,4 +22,9 @@ NEW LANDMARK FORM
   <% end %>
 
   And/Or Create a New Title:
-  <input type="text" name="title[name]" id="new_title"> -->
+  <input type="text" name="title[name]" id="new_title">
+
+  <input type="submit" name="submit" id="Edit Figure">Edit Figure</input>
+
+
+</form>
